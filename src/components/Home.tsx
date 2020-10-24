@@ -12,12 +12,12 @@ export default class Home extends React.Component<RouteComponentProps, IState> {
         this.state = { customers: [] }
     }
     public componentDidMount(): void {
-        axios.get(`http://localhost:3000/customers`).then(data => {
+        axios.get(`http://localhost:5000/customers`).then(data => {
             this.setState({ customers: data.data })
         })
     }
     public deleteCustomer(id: number) {
-        axios.delete(`http://localhost:3000/customers/${id}`).then(data => {
+        axios.delete(`http://localhost:5000/customers/${id}`).then(data => {
             const index = this.state.customers.findIndex(customer => customer.id === id);
             this.state.customers.splice(index, 1);
             this.props.history.push('/');

@@ -27,7 +27,7 @@ class EditCustomer  extends React.Component<RouteComponentProps<any>, IFormState
     }
 
     public componentDidMount(): void {
-        axios.get(`http://localhost:3000/customers/${this.state.id}`).then(data => {
+        axios.get(`http://localhost:5000/customers/${this.state.id}`).then(data => {
             this.setState({ customer: data.data });
         })
     }
@@ -35,7 +35,7 @@ class EditCustomer  extends React.Component<RouteComponentProps<any>, IFormState
     private processFormSubmission = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         this.setState({ loading: true });
-        axios.patch(`http://localhost:3000/customers/${this.state.id}`, this.state.values).then(data => {
+        axios.patch(`http://localhost:5000/customers/${this.state.id}`, this.state.values).then(data => {
             this.setState({ submitSuccess: true, loading: false })
             setTimeout(() => {
                 this.props.history.push('/');
