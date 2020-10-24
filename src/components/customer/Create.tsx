@@ -1,6 +1,6 @@
-import * as React from 'react'
-import axios from 'axios'
-import { RouteComponentProps, withRouter } from 'react-router-dom'
+import * as React from 'react';
+import axios from 'axios';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 export interface IValues {
     first_name: string,
