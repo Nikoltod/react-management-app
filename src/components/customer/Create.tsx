@@ -10,13 +10,13 @@ export interface IValues {
     address: string,
     description: string,
 }
-
 export interface IFormState {
-    [key: string]: any,
-    values: IValues[],
-    submitSuccess: boolean,
-    loading: boolean,
+    [key: string]: any;
+    values: IValues[];
+    submitSuccess: boolean;
+    loading: boolean;
 }
+
 
 class Create extends React.Component<RouteComponentProps, IFormState> {
     constructor(props: RouteComponentProps) {
@@ -31,12 +31,12 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
             values: [],
             loading: false,
             submitSuccess: false,
-        };
+        }
     }
 
     private processFormSubmission = (e: React.FormEvent<HTMLFormElement>): void => {
-        e.preventDefault()
-        this.setState({ loading: true })
+        e.preventDefault();
+        this.setState({ loading: true });
         const formData = {
             first_name: this.state.first_name,
             last_name: this.state.last_name,
@@ -45,22 +45,18 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
             address: this.state.address,
             description: this.state.description,
         }
-
-        this.setState({ submitSuccess: true, values: [...this.state.values, formData], loading: false })
-
+        this.setState({ submitSuccess: true, values: [...this.state.values, formData], loading: false });
         axios.post(`http://localhost:3000/customers`, formData).then(data => [
             setTimeout(() => {
-                this.props.history.push('/')
+                this.props.history.push('/');
             }, 1500)
-        ])
-
-
+        ]);
     }
 
     private handleInputChanges = (e: React.FormEvent<HTMLInputElement>) => {
-        e.preventDefault()
+        e.preventDefault();
         this.setState({
-            [e.currentTarget.name]: e.currentTarget.value
+            [e.currentTarget.name]: e.currentTarget.value,
         })
     }
 
@@ -108,7 +104,7 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
                         <div className="form-group col-md-4 pull-right">
                             <button className="btn btn-success" type="submit">
                                 Create Customer
-                          </button>
+                            </button>
                             {loading &&
                                 <span className="fa fa-circle-o-notch fa-spin" />
                             }
@@ -119,5 +115,4 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
         )
     }
 }
-
-export default withRouter(Create);
+export default withRouter(Create)
