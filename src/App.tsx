@@ -9,7 +9,7 @@ class App extends React.Component<RouteComponentProps<any>>  {
     public render() {
         return (
             <div>
-                <nav>
+                <nav className="navbar-expand-lg w-100 mb-4">
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/create'}>Create</Link></li>

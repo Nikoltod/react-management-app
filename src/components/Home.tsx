@@ -27,16 +27,16 @@ export default class Home extends React.Component<RouteComponentProps, IState> {
     public render() {
         const customers = this.state.customers;
         return (
-            <div>
+            <div className="row">
                 {customers.length === 0 && (
                     <div className="text-center">
                         <h2>No customer found at the moment</h2>
                     </div>
                 )}
-                <div className="container">
+                <div className="container col-lg-10">
                     <div className="row">
-                        <table className="table table-bordered">
-                            <thead className="thead-light">
+                        <table className="table table-striped">
+                            <thead className="thead-dark">
                                 <tr>
                                     <th scope="col">Firstname</th>
                                     <th scope="col">Lastname</th>
@@ -59,8 +59,8 @@ export default class Home extends React.Component<RouteComponentProps, IState> {
                                         <td>
                                             <div className="d-flex justify-content-between align-items-center">
                                                 <div className="btn-group" style={{ marginBottom: "20px" }}>
-                                                    <Link to={`edit/${customer.id}`} className="btn btn-sm btn-outline-secondary">Edit Customer </Link>
-                                                    <button className="btn btn-sm btn-outline-secondary" onClick={() => this.deleteCustomer(customer.id)}>Delete Customer</button>
+                                                    <Link to={`edit/${customer.id}`} className="btn btn-sm btn-outline-primary">Edit Customer </Link>
+                                                    <button className="btn btn-sm btn-outline-danger" onClick={() => this.deleteCustomer(customer.id)}>Delete Customer</button>
                                                 </div>
                                             </div>
                                         </td>
