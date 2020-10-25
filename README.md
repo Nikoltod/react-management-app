@@ -2,6 +2,9 @@
 
 [![ReactJS](https://reactjs.org/icons/icon-144x144.png?v=f4d46f030265b4c48a05c999b8d93791)](https://reactjs.org/) [![TypeScript](https://www.typescriptlang.org/icons/icon-144x144.png?v=e0cca9b778c3248c7434bc3c68c0e8b2)](https://www.typescriptlang.org/)
 
+[![Actions Status](https://github.com/Nikoltod/react-management-app/workflows/Node.js%20CI/badge.svg)](https://github.com/Nikoltod/react-management-app/actions)
+
+
 The app is mobile-ready, offline-storage, and written in ReactJS with TypeScript.
 
   - Fully supported CRUD operations.
